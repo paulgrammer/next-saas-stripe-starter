@@ -1,149 +1,149 @@
 "use client";
-import { cn } from "@/lib/utils";
+
 import {
-	IconActivity,
-	IconCloud,
-	IconDatabase,
-	IconEaseInOut,
-	IconRocket,
-	IconTemplate,
-	IconTerminal,
-	IconTerminal2,
-	IconUsers,
+  IconActivity,
+  IconCloud,
+  IconDatabase,
+  IconEaseInOut,
+  IconRocket,
+  IconTemplate,
+  IconTerminal,
+  IconTerminal2,
+  IconUsers,
 } from "@tabler/icons-react";
 import { Layers, UnlockIcon } from "lucide-react";
 
+import { cn } from "@/lib/utils";
+import { HeaderSection } from "@/components/shared/header-section";
+import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+
+const features = [
+  {
+    title: "Lorem Ipsum Dolor",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icon: <IconRocket />,
+  },
+  {
+    title: "Sed Do Eiusmod",
+    description:
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    icon: <Layers />,
+  },
+  {
+    title: "Ut Enim Ad Minim",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    icon: <IconCloud />,
+  },
+  {
+    title: "Duis Aute Irure",
+    description:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+    icon: <IconUsers />,
+  },
+  {
+    title: "Excepteur Sint Occaecat",
+    description:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
+    icon: <IconDatabase />,
+  },
+  {
+    title: "Consectetur Adipiscing",
+    description:
+      "Consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    icon: <IconTerminal />,
+  },
+  {
+    title: "Quis Autem Vel",
+    description:
+      "Quis autem vel eum iure reprehenderit qui in ea voluptate velit.",
+    icon: <IconUsers />,
+  },
+  {
+    title: "Nemo Enim Ipsam",
+    description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur.",
+    icon: <IconTemplate />,
+  },
+  {
+    title: "Neque Porro Quisquam",
+    description:
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.",
+    icon: <UnlockIcon />,
+  },
+  {
+    title: "Lorem Ipsum Dolor Sit",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icon: <IconActivity />,
+  },
+  {
+    title: "Ut Labore Et Dolore",
+    description: "Ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    icon: <IconTerminal2 />,
+  },
+  {
+    title: "Magni Dolores Eos",
+    description: "Magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    icon: <IconEaseInOut />,
+  },
+];
+
 export function MoreFeatures() {
-	const features = [
-		{
-			title: "Flexible Application Deployment",
-			description:
-				"Deploy any application using Nixpacks, Heroku Buildpacks, or your custom Dockerfile, tailored to your stack.",
-			icon: <IconRocket />,
-		},
-		{
-			title: "Native Docker Compose Support",
-			description:
-				"Deploy complex applications natively with full Docker Compose integration for seamless orchestration.",
-			icon: <Layers />,
-		},
-		{
-			title: "Multi-server Support",
-			description:
-				"Effortlessly deploy your applications on remote servers, with zero configuration hassle.",
-			icon: <IconCloud />,
-		},
-		{
-			title: "Advanced User Management",
-			description:
-				"Control user access with detailed roles and permissions, keeping your deployments secure and organized.",
-			icon: <IconUsers />,
-		},
-		{
-			title: "Database Management with Backups",
-			description:
-				"Manage and back up MySQL, PostgreSQL, MongoDB, MariaDB, Redis directly from the platform.",
-			icon: <IconDatabase />,
-		},
-		{
-			title: "API & CLI Access",
-			description:
-				"Need custom functionality? The platform offers complete API and CLI access to fit your needs.",
-			icon: <IconTerminal />,
-		},
-		{
-			title: "Docker Swarm Clusters",
-			description:
-				"Scale your deployments seamlessly with built-in Docker Swarm support for robust, multi-node applications.",
-			icon: <IconUsers />,
-		},
-		{
-			title: "Open Source Templates",
-			description:
-				"Get started quickly with pre-configured templates for popular tools like Supabase, Cal.com, and Pocketbase.",
-			icon: <IconTemplate />,
-		},
-		{
-			title: "No Vendor Lock-In",
-			description:
-				"Experience complete freedom to modify, scale, and customize the platform to suit your specific needs.",
-			icon: <UnlockIcon />,
-		},
-		{
-			title: "Real-time Monitoring & Alerts",
-			description:
-				"Monitor CPU, memory, and network usage in real-time across your deployments for full visibility.",
-			icon: <IconActivity />,
-		},
-		{
-			title: "Built for developers",
-			description:
-				"Designed specifically for engineers and developers seeking control and flexibility.",
-			icon: <IconTerminal2 />,
-		},
-		{
-			title: "Self-hosted & Open Source",
-			description:
-				"The platform provides complete control with self-hosting capabilities and open-source transparency.",
-			icon: <IconEaseInOut />,
-		},
-	];
-	return (
-		<div className="flex flex-col justify-center items-center mt-10 px-4">
-			<h2 className="font-display text-3xl tracking-tight text-primary sm:text-4xl text-center">
-				Powerful Deployment, Tailored for You
-			</h2>
-			<p className="mt-4 text-lg tracking-tight text-muted-foreground text-center">
-				Unlock seamless multi-server deployments, advanced user control, and
-				flexible database management—all in one platform.
-			</p>
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto mt-10 max-sm:p-0 max-sm:mx-0 max-sm:w-full">
-				{features.map((feature, index) => (
-					<Feature key={feature.title} {...feature} index={index} />
-				))}
-			</div>
-		</div>
-	);
+  return (
+    <section className="pt-28">
+      <MaxWidthWrapper>
+        <HeaderSection
+          label="Extra Features"
+          title="Lorem Ipsum Dolor Sit Amet"
+          subtitle="Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        />
+        <div className="relative z-10 mx-auto mt-10 grid max-w-7xl grid-cols-1 py-10 max-sm:mx-0 max-sm:w-full max-sm:p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {features.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
+        </div>
+      </MaxWidthWrapper>
+    </section>
+  );
 }
 
 const Feature = ({
-	title,
-	description,
-	icon,
-	index,
+  title,
+  description,
+  icon,
+  index,
 }: {
-	title: string;
-	description: string;
-	icon: React.ReactNode;
-	index: number;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  index: number;
 }) => {
-	return (
-		<div
-			className={cn(
-				"flex flex-col lg:border-r py-4 md:py-10 relative group/feature border-neutral-200 dark:border-neutral-800",
-				(index === 0 || index === 4 || index === 8) &&
-					"lg:border-l border-neutral-200 dark:border-neutral-800",
-				(index < 4 || index < 8) && "lg:border-b border-neutral-200 dark:border-neutral-800",
-			)}
-		>
-			{index < 4 && (
-				<div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-200 to-transparent dark:from-neutral-800 pointer-events-none" />
-			)}
-			{index >= 4 && (
-				<div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-200 to-transparent dark:from-neutral-800 pointer-events-none" />
-			)}
-			<div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
-				{icon}
-			</div>
-			<div className="text-lg font-bold mb-2 relative z-10 px-10">
-				<div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-neutral-900 dark:group-hover/feature:bg-white transition-all duration-200 origin-center" />
-				<span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-900 dark:text-neutral-100">
-					{title}
-				</span>
-			</div>
-			<p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
-				{description}
-			</p>
-		</div>
-	);
+  return (
+    <div
+      className={cn(
+        "group/feature relative flex flex-col border-neutral-200 py-4 dark:border-neutral-800 md:py-10 lg:border-r",
+        [0, 4, 8].includes(index) &&
+          "border-neutral-200 dark:border-neutral-800 lg:border-l",
+        index < 8 && "border-neutral-200 dark:border-neutral-800 lg:border-b",
+      )}
+    >
+      {index < 4 && (
+        <div className="pointer-events-none absolute inset-0 size-full bg-gradient-to-t from-neutral-200 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-neutral-800" />
+      )}
+      {index >= 4 && (
+        <div className="pointer-events-none absolute inset-0 size-full bg-gradient-to-b from-neutral-200 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-neutral-800" />
+      )}
+      <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-400">
+        {icon}
+      </div>
+      <div className="relative z-10 mb-2 px-10 text-lg font-bold">
+        <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-r-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-neutral-900 dark:bg-neutral-700 dark:group-hover/feature:bg-white" />
+        <span className="inline-block text-neutral-900 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
+          {title}
+        </span>
+      </div>
+      <p className="relative z-10 max-w-xs px-10 text-sm text-neutral-600 dark:text-neutral-300">
+        {description}
+      </p>
+    </div>
+  );
 };
